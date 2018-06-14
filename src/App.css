@@ -1,0 +1,54 @@
+
+
+.Player {
+    text-align: center;
+    position: static;
+    background: #FFB53E;
+    height: 33.33%;
+    width: 100%;
+    margin-top: 0;
+    z-index: 10;
+}
+
+.active{
+    background: #FE3E82;
+}
+
+.playerBox{
+    position: fixed;
+    left: 30%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.Controls {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    background: #4E9BFE;
+    z-index: 10;
+
+}
+
+.Banner {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 15px solid darkgray;
+    z-index: -1;
+}
+
+.show-banner{
+    z-index: 50;
+}
+
+
+
+
