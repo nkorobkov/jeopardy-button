@@ -41,7 +41,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    border: 15px solid darkgray;
+    border: 0 solid darkgray;
     z-index: -1;
 }
 

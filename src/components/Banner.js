@@ -21,7 +21,6 @@ class Banner extends Component {
         const classes = 'Banner' + showBannerClass;
         return (
             <div className={classes} onClick={this.bannerClicked} onContextMenu={this.bannerClicked}>
-               Banner
             </div>
         );
     }
