@@ -3,15 +3,22 @@
 .Player {
     text-align: center;
     position: static;
-    background: #FFB53E;
     height: 33.33%;
     width: 100%;
     margin-top: 0;
     z-index: 10;
 }
 
-.active{
+.PSBP{
     background: #FE3E82;
+}
+
+.PSR{
+    background: #FFB53E;
+}
+
+.PSD{
+    background: #CBC2C1;
 }
 
 .playerBox{
@@ -45,7 +52,7 @@
     z-index: -1;
 }
 
-.show-banner{
+.active-banner{
     z-index: 50;
 }
 

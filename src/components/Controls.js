@@ -8,10 +8,9 @@ class Controls extends Component {
         return (
             <div className="Controls">
                 <p> Controls</p>
-
-
             </div>
         );
     }
 }
+
 export default Controls
