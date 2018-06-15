@@ -1,5 +1,56 @@
-body{
+body {
     font-family: 'Roboto Slab', serif;
+}
+
+.Sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    background: #4E9BFE;
+    z-index: 10;
+    color: #333;
+    font-size: 25px;
+}
+
+.Sidebar-container {
+    position: relative;
+    margin-left: 3%;
+
+}
+
+.header {
+    float: left;
+    margin-top: 5%;
+}
+
+.Controls {
+    position: relative;
+    top: 10%;
+
+}
+
+.timer-input-box {
+
+    margin-top: 30%;
+    width: 15%;
+    position: relative;
+
+}
+.timer-line{
+    display: inline;
+    white-space:nowrap;
+}
+.timerInput {
+    font: 25px/25px 'Roboto Slab', serif;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+.hint {
+    text-align: center;
 }
 
 .Player {
@@ -11,56 +62,101 @@ body{
     margin-top: 0;
     z-index: 10;
 }
-.name-col{float: left; width: 60%; margin-left: 20%; top:30%;  position: relative;}
-:focus{outline: none;}
-.nameInput{font: 50px/50px 'Roboto Slab', serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 2px;}
-.effect-16{border: 0;  border-bottom: 2px solid #ccc; background-color: transparent;}
-.effect-16 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4E9BFE; transition: 0.4s;}
-.effect-16:focus ~ .focus-border,
-.has-content.effect-16 ~ .focus-border{width: 100%; transition: 0.4s;}
-.effect-16 ~ label{position: absolute; left: 0; width: 100%; top: 9px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
-.effect-16:focus ~ label, .has-content.effect-16 ~ label{top: -16px; font-size: 12px; color: #4E9BFE; transition: 0.3s;}
 
-.PlayerName{
+.name-col {
+    float: left;
+    width: 60%;
+    margin-left: 20%;
+    top: 30%;
+    position: relative;
+}
+
+:focus {
+    outline: none;
+}
+
+.nameInput {
+    font: 50px/50px 'Roboto Slab', serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.effect-16 {
+    border: 0;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+}
+
+.effect-16 ~ .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4E9BFE;
+    transition: 0.4s;
+}
+
+.effect-16:focus ~ .focus-border,
+.has-content.effect-16 ~ .focus-border {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.effect-16 ~ label {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 9px;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
+}
+
+.effect-16:focus ~ label, .has-content.effect-16 ~ label {
+    top: -16px;
+    font-size: 12px;
+    color: #4E9BFE;
+    transition: 0.3s;
+}
+
+.PlayerName {
     font-size: 50%;
     border: 2px solid white;
     box-sizing: border-box;
     vertical-align: center;
-    box-shadow:
-            inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
+    0 0 16px rgba(0, 0, 0, 0.1);
 }
 
-.PSBP{
+.PSBP {
     background: #FE3E82;
 }
 
-.PSR{
+.PSR {
     background: #FFB53E;
 }
 
-.PSD{
+.PSD {
     background: #CBC2C1;
 }
 
-.playerBox{
+.playerBox {
     position: fixed;
     left: 30%;
     top: 0;
     bottom: 0;
     right: 0;
-}
-
-.Controls {
-    text-align: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 30%;
-    background: #4E9BFE;
-    z-index: 10;
-
 }
 
 .Banner {
@@ -74,7 +170,7 @@ body{
     z-index: -1;
 }
 
-.active-banner{
+.active-banner {
     z-index: 50;
 }
 
