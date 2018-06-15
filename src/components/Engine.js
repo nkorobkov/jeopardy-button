@@ -23,22 +23,16 @@ class Engine extends Component {
         this.onBannerClick = this.onBannerClick.bind(this);
         this.newGame = this.newGame.bind(this);
         this.startOperational = this.startOperational.bind(this);
-
-
-        //this.newGame = this.newGame.bind(this);
-
     }
 
     componentDidMount() {
-        this.newGame();
         Mousetrap.bind(['space'], this.newGame);
-        Mousetrap.bind(['o'], this.startOperational);
-
+        Mousetrap.bind(['backspace'], this.startOperational);
     }
 
     componentWillUnmount() {
         Mousetrap.unbind(['space'], this.newGame);
-        Mousetrap.unbind(['o'], this.startOperational);
+        Mousetrap.unbind(['backspace'], this.startOperational);
     }
 
     startOperational(){

@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 
 class Player extends Component {
-    // this gyu is stateless
+    // this guy is stateless
 
     render() {
-        const classes = 'Player ' + this.props.state;
+        const dClasses = 'Player ' + this.props.state;
         return (
-            <div className={classes}>
-                 Player
+            <div className={dClasses}>
+                    <div className="name-col input-effect">
+                        <input className="effect-16 nameInput" type="text" placeholder="Name"/>
+                        <span className="focus-border"/>
+                    </div>
             </div>
         );
     }
