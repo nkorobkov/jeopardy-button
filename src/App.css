@@ -7,7 +7,7 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 30%;
+    width: 25%;
     background: #4E9BFE;
     z-index: 10;
     color: #333;
@@ -15,8 +15,11 @@ body {
 }
 
 .Sidebar-container {
-    position: relative;
-    margin-left: 3%;
+    position: absolute;
+    left: 3%;
+    top: 0;
+    bottom: 0;
+    width: 97%;
 
 }
 
@@ -26,7 +29,7 @@ body {
 }
 
 .Controls {
-    position: relative;
+    position: absolute;
     top: 10%;
 
 }
@@ -50,7 +53,12 @@ body {
 }
 
 .hint {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
     text-align: center;
+    font-size:  18px;
+    color: #eeeeee;
 }
 
 .Player {
@@ -153,7 +161,7 @@ input::-webkit-inner-spin-button {
 
 .playerBox {
     position: fixed;
-    left: 30%;
+    left: 25%;
     top: 0;
     bottom: 0;
     right: 0;

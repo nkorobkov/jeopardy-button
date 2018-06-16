@@ -3,7 +3,7 @@ import Controls from "./Controls";
 import Player from "./Player";
 import Banner from "./Banner";
 import Mousetrap from 'mousetrap';
-import {GameState, PlayerState} from "../constants/States";
+import {GameState, PlayerState, GameStateHint} from "../constants/States";
 
 
 class Engine extends Component {
@@ -86,7 +86,7 @@ class Engine extends Component {
     render() {
         return (
             <div className="Engine">
-                <Controls/>
+                <Controls hint={GameStateHint[this.state.gameState]}/>
                 <div className="playerBox">
                     <Player state={this.state.playersState[1]}/>
                     <Player state={this.state.playersState[2]}/>
