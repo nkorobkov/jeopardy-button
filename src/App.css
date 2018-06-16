@@ -35,9 +35,9 @@ body {
 }
 
 .timer-input-box {
-
+    color: #333;
     margin-top: 30%;
-    width: 15%;
+    width: 40px;
     position: relative;
 
 }
@@ -46,6 +46,7 @@ body {
     white-space:nowrap;
 }
 .timerInput {
+    color: #333;
     font: 25px/25px 'Roboto Slab', serif;
     width: 100%;
     box-sizing: border-box;

@@ -21,6 +21,8 @@ class Engine extends Component {
         };
 
         this.onBannerClick = this.onBannerClick.bind(this);
+        this.onFSClick = this.onFSClick.bind(this);
+        this.onTimerChange = this.onTimerChange.bind(this);
         this.newGame = this.newGame.bind(this);
         this.startOperational = this.startOperational.bind(this);
     }
@@ -52,6 +54,14 @@ class Engine extends Component {
             this.activatePlayer(index);
             this.setState({gameState: GameState.pressed})
         }
+    }
+
+    onFSClick(){
+        this.setState((s) => ({fsFlag : !s.fsFlag}))
+    }
+
+    onTimerChange(val){
+        this.setState((s) => ({qTime : +val}))
     }
 
     isFalseStart() {
@@ -86,7 +96,8 @@ class Engine extends Component {
     render() {
         return (
             <div className="Engine">
-                <Controls hint={GameStateHint[this.state.gameState]}/>
+                <Controls hint={GameStateHint[this.state.gameState]} onFSClick = {this.onFSClick}
+                          onTimerChange={this.onTimerChange} timerValue={this.state.qTime}/>
                 <div className="playerBox">
                     <Player state={this.state.playersState[1]}/>
                     <Player state={this.state.playersState[2]}/>
