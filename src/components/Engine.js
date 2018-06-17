@@ -17,6 +17,7 @@ class Engine extends Component {
         super(props);
         this.state = {
             fsFlag: false,
+            forceScreenLock: false,
             qTime: 10,
             waTime: 7,
             gameState: GameState.operational,
@@ -75,6 +76,7 @@ class Engine extends Component {
     timerDone(){
         timerEnd.play();
         this.reset();
+        this.blockScreen(2)
     }
 
     stopTimer(){
@@ -100,6 +102,11 @@ class Engine extends Component {
         this.stopTimer();
     }
 
+    blockScreen(sec){
+        this.setState({forceScreenLock: true});
+        setTimeout(() => { this.setState({forceScreenLock: false})}, sec * 1000)
+    }
+
     reset(){
         let ps = Object.assign({}, this.DEFAULT_PLAYERS_STATE);
         this.setState({gameState: GameState.ready, playersState: ps })
@@ -107,6 +114,8 @@ class Engine extends Component {
 
     playerClicked(index) {
         if (this.BUTTONS_BLOCKED_PLAYER_STATES.includes(this.state.playersState[index])) return;
+        if (this.state.forceScreenLock) return;
+
         if (this.isFalseStart()) {
             this.disqualifyPlayer(index)
         } else {
@@ -134,7 +143,7 @@ class Engine extends Component {
     }
 
     setPlayerState(index, state){
-        this.setState(function(prevState, props) {
+        this.setState(function(prevState) {
             let ps = prevState.playersState;
             ps[index] = state;
             return {
