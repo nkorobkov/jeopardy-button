@@ -18,6 +18,7 @@ class Engine extends Component {
         this.state = {
             fsFlag: false,
             qTime: 10,
+            waTime: 7,
             gameState: GameState.operational,
             playersState: Object.assign({}, this.DEFAULT_PLAYERS_STATE)
         };
@@ -26,20 +27,24 @@ class Engine extends Component {
         this.onFSClick = this.onFSClick.bind(this);
         this.onTimerChange = this.onTimerChange.bind(this);
         this.onStartTimerClick = this.onStartTimerClick.bind(this);
-        this.newGame = this.newGame.bind(this);
         this.startOperational = this.startOperational.bind(this);
+        this.onWrongAnswerClick = this.onWrongAnswerClick.bind(this);
+        this.newGame = this.newGame.bind(this);
     }
 
     componentDidMount() {
         Mousetrap.bind(['space'], this.newGame);
         Mousetrap.bind(['backspace'], this.startOperational);
         Mousetrap.bind(['t'], this.onStartTimerClick);
+        Mousetrap.bind(['down'], this.onWrongAnswerClick);
+
     }
 
     componentWillUnmount() {
         Mousetrap.unbind(['space'], this.newGame);
         Mousetrap.unbind(['backspace'], this.startOperational);
         Mousetrap.unbind(['t'], this.onStartTimerClick);
+        Mousetrap.unbind(['down'], this.onWrongAnswerClick);
     }
 
     startOperational(){
@@ -48,8 +53,17 @@ class Engine extends Component {
     }
 
     onStartTimerClick(){
-        if(this.TIMER_BLOCKED_GAME_STATES.includes(this.props.gameState)){return}
+        if(this.TIMER_BLOCKED_GAME_STATES.includes(this.state.gameState)){return}
         this.startTimer(this.state.qTime)
+    }
+
+    onWrongAnswerClick(){
+        if(this.state.gameState !== GameState.pressed){
+            //no need to indicate weather ans is wrong
+            return;
+        }
+        this.startTimer(this.state.waTime);
+        this.disqualifyPlayer(this.getPressedPlayerID())
     }
 
     startTimer(val){
@@ -60,7 +74,7 @@ class Engine extends Component {
 
     timerDone(){
         timerEnd.play();
-        this.reset()
+        this.reset();
     }
 
     stopTimer(){
@@ -105,6 +119,10 @@ class Engine extends Component {
 
     isFalseStart() {
         return this.state.gameState === GameState.ready && this.state.fsFlag
+    }
+
+    getPressedPlayerID(){
+        return [1,2,3].find(key => this.state.playersState[key] === PlayerState.pressed);
     }
 
     disqualifyPlayer(index){
