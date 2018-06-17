@@ -6,11 +6,18 @@ class Controls extends Component {
     constructor(props){
         super(props);
         this.handleTimerChange = this.handleTimerChange.bind(this);
+        this.handleFSChange = this.handleFSChange.bind(this);
     }
 
     handleTimerChange(e) {
         this.props.onTimerChange(e.target.value);
     }
+
+    handleFSChange(e) {
+        e.target.blur();
+        this.props.onFSClick();
+    }
+
     render() {
         // should hold info about hotkeys, false start flag and signal time set field
 
@@ -29,7 +36,7 @@ class Controls extends Component {
                                                                       onChange={this.handleTimerChange} value={this.props.timerValue}/></div>
                         </div>
                         <div className='fs-input-box'>
-                            <span>False Start: <input className="regular-checkbox" type="checkbox" onClick={this.props.onFSClick}/></span>
+                            <span>False Start: <input className="regular-checkbox" type="checkbox" onClick={this.handleFSChange}/></span>
                         </div>
 
                     </div>
