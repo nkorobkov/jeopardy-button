@@ -19,7 +19,7 @@ class Banner extends Component {
         const showBannerClass = this.props.show ? ' active-banner' : '';
         const classes = 'Banner' + showBannerClass;
         return (
-            <div className={classes} onMouseDown={this.bannerClicked}>
+            <div className={classes} onContextMenu={(event) => event.preventDefault()} onMouseDown={this.bannerClicked}>
             </div>
         );
     }
