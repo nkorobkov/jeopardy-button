@@ -1,9 +1,18 @@
 {
-  "main.css": "static/css/main.8fb03f0c.css",
-  "main.css.map": "static/css/main.8fb03f0c.css.map",
-  "main.js": "static/js/main.796b8028.js",
-  "main.js.map": "static/js/main.796b8028.js.map",
-  "static/media/buttonPressed.wav": "static/media/buttonPressed.b1d84b3d.wav",
-  "static/media/timerEnd.wav": "static/media/timerEnd.1f1d4834.wav",
-  "static/media/timerStart.wav": "static/media/timerStart.fcf250c6.wav"
+  "files": {
+    "main.css": "/jeopardy-button/static/css/main.f4b9d68f.chunk.css",
+    "main.js": "/jeopardy-button/static/js/main.a98db08e.chunk.js",
+    "main.js.map": "/jeopardy-button/static/js/main.a98db08e.chunk.js.map",
+    "runtime~main.js": "/jeopardy-button/static/js/runtime~main.1db371de.js",
+    "runtime~main.js.map": "/jeopardy-button/static/js/runtime~main.1db371de.js.map",
+    "static/js/2.9a693294.chunk.js": "/jeopardy-button/static/js/2.9a693294.chunk.js",
+    "static/js/2.9a693294.chunk.js.map": "/jeopardy-button/static/js/2.9a693294.chunk.js.map",
+    "index.html": "/jeopardy-button/index.html",
+    "precache-manifest.377b56aa77d2cb8820a13ce543c161ec.js": "/jeopardy-button/precache-manifest.377b56aa77d2cb8820a13ce543c161ec.js",
+    "service-worker.js": "/jeopardy-button/service-worker.js",
+    "static/css/main.f4b9d68f.chunk.css.map": "/jeopardy-button/static/css/main.f4b9d68f.chunk.css.map",
+    "static/media/buttonPressed.wav": "/jeopardy-button/static/media/buttonPressed.b1d84b3d.wav",
+    "static/media/timerEnd.wav": "/jeopardy-button/static/media/timerEnd.1f1d4834.wav",
+    "static/media/timerStart.wav": "/jeopardy-button/static/media/timerStart.fcf250c6.wav"
+  }
 }
