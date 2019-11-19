@@ -25,11 +25,12 @@ class Controls extends Component {
             <div className="Sidebar">
                 <div className="Sidebar-container">
                     <div className="header">
-                        Brain Ring Button <br/>
-                        Alpha 0.0.1
+                        Jeopardy Button <br/>
+                        <a href="https://nkorobkov.github.io/projects/button" className="description_link">What is it?</a>
                     </div>
                     <br/>
                     <br/>
+
                     <div className="Controls">
                         <div className='timer-input-box'>
                             <div className='timer-line'>Timer: <input className="effect-16 timerInput" type="number"
